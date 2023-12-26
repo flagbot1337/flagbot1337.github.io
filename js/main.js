@@ -1,3 +1,4 @@
+// Coded by ZishanAdThandar
 (function ($) {
   "use strict";
 

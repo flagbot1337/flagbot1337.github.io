@@ -184,7 +184,7 @@
 })(jQuery);
 
 //clock 
-
+/*
 document.addEventListener('DOMContentLoaded', () => {
 
   // Unix timestamp (in seconds) to count down to
@@ -212,3 +212,4 @@ document.addEventListener('DOMContentLoaded', () => {
   var ver = document.getElementById('ver');
   ver.innerHTML = flipdown.version;
 });
+*/

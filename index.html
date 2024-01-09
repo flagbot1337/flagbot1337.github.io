@@ -178,13 +178,135 @@ Join us on this thrilling adventure where we navigate the digital landscapes, de
     <!--==========================
       Events Section
     ============================-->
- <div class="example">
+ <!--<div class="example">
   <h1>amanC0N</h1>
   <p>amanC0N is international CTF by flag_bot</p>
   <div id="flipdown" class="flipdown"></div>
   <div class="buttons">
   </div>
-</div>
+</div>-->
+
+     <section id="events"><br><br>
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Events</h3>
+            <h2 id = "calendar-disclaimer"> <center>AMANC0N CTF Coming soon </center> </h2>
+          <!-- <img src="/img/comingsoon.jpg" style="width:70%; display: block;margin-left: auto;margin-right: auto;">-->          
+        </header> 
+
+        <div class="row">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+<script src="https://momentjs.com/downloads/moment.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data-2012-2022.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>  
+<div class="clock" style="width: 650px; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div>
+<script>
+  window.addEventListener('load', (event) => {
+  let clock;
+
+  // Grab the current date
+  let currentDate = new Date();
+
+  // Target future date/24 hour time/Timezone
+  let targetDate = moment.tz("2024-02-20 23:59", "Asia/Dhaka");
+
+  // Calculate the difference in seconds between the future and current date
+  let diff = targetDate / 1000 - currentDate.getTime() / 1000;
+
+  if (diff <= 0) {
+    // If remaining countdown is 0
+    clock = (".clock").FlipClock(0, {
+      clockFace: "DailyCounter",
+      countdown: true,
+      autostart: false
+    });
+    console.log("Date has already passed!")
+    
+  } else {
+    // Run countdown timer
+    clock = $(".clock").FlipClock(diff, {
+      clockFace: "DailyCounter",
+      countdown: true,
+      callbacks: {
+        stop: function() {
+          console.log("Timer has ended!")
+        }
+      }
+    });
+    
+    // Check when timer reaches 0, then stop at 0
+    setTimeout(function() {
+      checktime();
+    }, 1000);
+    
+    function checktime() {
+      t = clock.getTime();
+      if (t <= 0) {
+        clock.setTime(0);
+      }
+      setTimeout(function() {
+        checktime();
+      }, 1000);
+    }
+  }
+});
+
+</script>
+
+          
+<p id="demo" style="width:70%; text-align: center; display: block;margin-left: auto;margin-right: auto;"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Feb 5, 2024 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+        </div>
+       <!-- <div class="row">
+           I don't know what happened there, but I'm replacing it with the old google calendar iframe -->
+          <!-- <div id = "google-calendar-iframe" align="center" class="col-lg-12 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <h4 class="title"><a href="https://www.notion.so/5ea673b76d0241a8afee2bd7c7117e50?v=1f7aff2762ad4e319052d4e55362792b"">Calendar [notion.so]</a></h4>
+            <br><small align = "left">Note, that to access the calendar on a mobile device, you have to subscribe to it and use your calendar app.</small>
+          </div> -->
+<!--
+          <div id = "google-calendar-iframe" align="center" class="col-lg-12 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+              <h4 class="title"><a href="https://calendar.google.com/calendar/embed?src=kucybersec.co.uk_3d6gmos2mbk56vflds5hnfiujo%40group.calendar.google.com&ctz=Europe%2FLondon">Google Calendar</a></h4>
+              <iframe src="https://calendar.google.com/calendar/embed?src=kucybersec.co.uk_3d6gmos2mbk56vflds5hnfiujo%40group.calendar.google.com&ctz=Europe%2FLondon" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+          </div> 
+
+        </div>-->
+      
+      </div>
+    </section><!-- #services -->
+
  <!--==========================
       Writeup Section
     ============================-->
